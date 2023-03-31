@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html>
+    
+<head>
+	<title>Login</title>
+</head>
+<title>admin side</title>
+<body>
+<center>
+
+  
+  
+  
+  {% if cvobj %}
+    <h3>CVs of student from dept {{dept}}</h3>
+    <h3>click to download</h3>
+    <ul>
+    {% for emp in cvobj %}
+      <!--
+      <li>{{emp.pdf}}</li>
+      <li>{{emp.0}}</li>-->
+      <!--Download - <a href="{{emp.pdf.url}}" download> {{emp.pdf}} </a>-->
+       <a href="{{emp.pdf.url}}" download> {{emp.0}} </a><br>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <h3>Not a valid rollno</h3>
+  {% endif %}
+  
+  <center>
+</body>
+
+</html>

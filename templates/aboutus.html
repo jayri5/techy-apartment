@@ -1,0 +1,31 @@
+{% extends "afterloginsg.html" %}
+
+{% block content %}
+
+<!--==================== CONTACT ====================-->
+<div class="contact section container" id="contact">                
+    <div class="contact__container grid">
+        <div class="contact__box">
+            <h2 class="section__title">
+                The brains behind, Sourav and Jayri!
+            </h2>
+
+            {% load static %}
+        <img src="{% static 'img/spic.jpeg' %}"  class="tutorial__modal-logo">
+        <img src="{% static 'img/jpic.png' %}"  class="tutorial__modal-logo">
+        
+        <h4 class="section__subtitle">
+                Both of us have a common goal of educating and empowering people through innovative solutions.
+        We aspire to leave a mark wherever we go. This site is an effort to provide a digital interface
+        for the day-to-day activities of our apartment. How better would our engineering degree put to use?
+            </h4><br><br><br>
+            If we impressed you anyhow or you want to contact us, below are our LinkedIn handles. 
+Feel free to communicate!<br> 
+<a href="https://www.linkedin.com/in/isouravganguly/" target="_blank">Sourav Ganguly</a><br>
+<a href="https://www.linkedin.com/in/jayri-bagchi-605b37174/" target="_blank"> Jayri Bagchi</a><br>
+         </div>
+    </div>
+</div>
+
+{% endblock %}
+

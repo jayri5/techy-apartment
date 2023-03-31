@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--=============== FAVICON ===============-->
+        <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+        <!-- ===============UNICONS================ -->
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+        <!--=============== REMIX ICONS ===============-->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+        <!--=============== CSS ===============-->
+        <!-- <link rel="stylesheet" href="assets/css/styles.css"> -->
+        <!-- Add additional CSS in static file -->
+    {% load static %}
+    {% block style %}
+        {% endblock %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+        <title>BANKURA UNNAYANI INSTITUTE OF ENGINEERING</title>
+    </head>
+    <body>
+        <!--==================== HEADER ====================-->
+        <header class="header" id="header">
+            <nav class="nav container">
+                <a href="#" class="nav__logo">
+                    <i class="ri-leaf-line nav__logo-icon"></i> BUIE Placement Management
+                </a>
+                
+                <div class="nav__menu" id="nav-menu">
+                    
+                
+                    {% if not user.is_superuser %}
+                    <div class="profile__box">
+                        <div class="profile__box-name">
+                            HELLO {{request.user}} 
+                        </div>
+                    </div>
+                        <ul class="nav__list">
+                        
+                        <li class="nav__item">
+                            <a href="{% url 'afterlogin' %}" class="nav__link">Quick Walkthrough!</a>
+                        </li>
+                        
+                        <li id="book-list" class="nav__item">
+                            <a href="{% url 'studentview' %}" class="nav__link"><i class="uil uil-books nav-icon"></i> VIEW YOUR COMPLETE PROFILE HERE</a>
+                        </li>
+
+                        <li id="book-list" class="nav__item">
+                            <a href="{% url 'addskill' %}" class="nav__link"><i class="uil uil-books nav-icon"></i> ADD YOUR SKILLS</a>
+                        </li>
+                       
+                        <li class="nav__item">
+                            <a href="{% url 'addproject' %}" class="nav__link"><i class="uil uil-question-circle nav-icon"></i> ADD YOUR PROJECTS </a>
+                        </li>
+                        
+                         <li class="nav__item">
+                            <a href="{% url 'addcv' %}" class="nav__link"><i class="uil uil-question-circle nav-icon"></i> UPLOAD CV </a>
+                        </li>
+                        
+                        <li class="nav__item">
+                            <a href="{% url 'studentview' %}" class="nav__link"><i class="uil uil-at nav-icon"></i> Scroll through latest news!</a>
+                        </li>
+                        
+                        <li class="nav__item">
+                            <a href="{% url 'aboutus' %}" class="nav__link"><i class="uil uil-at nav-icon"></i> About the Developers</a>
+                        </li>
+                        
+                        <li class="nav__item">
+                            <a href="{% url 'reset_password' %}" class="nav__link"><i class="uil uil-unlock-alt nav-icon"></i> Reset Password</a>
+                        </li>
+                        
+                        <li class="nav__item">
+                            <a href="{% url 'logout' %}" class="nav__link"><i class="uil uil-unlock-alt nav-icon"></i> Logout</a>
+                        </li>
+                        
+                        {% else %}
+                        
+                        <li class="nav__item">
+                                <a id="log-in" class="nav__link button button--flex login-btn" href="https://www.buie.ac.in/" target="__blank"> <strong> BUIE Homepage</strong></a>                           
+                        </li>
+                        
+                    {% endif %}
+                        
+
+                        <!--{% if user.is_authenticated %}
+                        <li class="nav__item">
+                            <a href="{% url 'reset_password' %}" class="nav__link"><i class="uil uil-unlock-alt nav-icon"></i> Reset Password</a>
+                        </li>
+                        
+                        <li class="nav__item">
+                            <a href="{% url 'logout' %}" class="nav__link"><i class="uil uil-unlock-alt nav-icon"></i> Logout</a>
+                        </li>
+                        {% endif %}-->
+
+
+                        {% if user.is_active and user.is_superuser %}
+                        <li class="nav__item">
+                            <a href="{% url 'afterlogin' %}" class="nav__link">Quick Walkthrough!</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="{% url 'adminoptions' %}" class="nav__link"><i class="uil uil-user-plus nav-icon"></i> Search student by Roll No</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="{% url 'adminoptions' %}" class="nav__link"><i class="uil uil-book-medical nav-icon"></i> See student resumes by Department</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="{% url 'adminoptions' %}" class="nav__link"><i class="uil uil-user-square nav-icon"></i> See student resumes by YOJ</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="{% url 'studentview' %}" class="nav__link"><i class="uil uil-at nav-icon"></i> Scroll through latest news!</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="{% url 'aboutus' %}" class="nav__link"><i class="uil uil-exchange-alt nav-icon"></i> About the Developers</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="{% url 'logout' %}" class="nav__link"><i class="uil uil-unlock-alt nav-icon"></i> Logout</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+
+                    <div class="nav__close" id="nav-close">
+                        <i class="ri-close-line"></i>
+                    </div>
+                </div>
+                
+        
+                <div class="nav__btns">
+                    <!-- Theme change button -->
+                    <i class="ri-moon-line change-theme" id="theme-button"></i>
+
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class="ri-menu-line" id="nav-toggle-icon"></i>
+                    </div>
+                </div>
+            </nav>
+        </header>
+       
+        
+<!-- -----------=================== Other Body and Web-Pages =================------------------ -->
+
+        {% block content %}{% endblock %}
+
+<!-- -----------=================== JAVASCRIPT =================------------------ -->
+        
+<!-- ================ MAIN JS ================ -->
+{% load static %}
+        <script src="{% static 'js/main.js' %}"></script>
+
+<!-- ================= Scroll popup with JS ==================== -->
+<script src="//code.jquery.com/jquery-latest.min.js"></script>
+<script src="index.js"></script>
+
+
+</html>

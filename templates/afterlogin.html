@@ -1,0 +1,65 @@
+{% extends "afterloginsg.html" %}
+
+{% block content %}
+
+<!--==================== CONTACT ====================-->
+<div class="contact section container" id="contact">                
+    <div class="contact__container grid">
+        <div class="contact__box">
+            <h2 class="section__title">
+            Hi, <br>
+            </h2>
+        </div>
+    </div>
+</div>
+
+<div class="section__title">
+    Some general instructions to interact with this website!
+</div>
+<div class="section__subtitle">
+    You can click on <i class="uil uil-bars tutorial__modal-icon"></i> [ top-right ] to show MENU options!
+</div><br>
+<div class="section__subtitle">
+    To stay updated with what's happening around the world, scroll through news.
+</div><br>
+<div class="section__subtitle">
+    To know who developed this, read about us in the "About the Developers" section.
+</div><br>
+<div class="section__subtitle">
+   You can tap on <i class="uil uil-sun"></i> or <i class="uil uil-moon"></i> to change themes!
+</div><br>
+<div class="section__subtitle">
+   Light <i class="uil uil-sun"></i> and Dark <i class="uil uil-moon"></i> Modes are Available...
+</div>
+
+{% endblock %}
+
+<!--
+<!DOCTYPE html>
+<html>
+<title> add later </title>    
+<head>
+	<title>Login</title>
+</head>
+<body>
+   <center> 
+    hello {{ request.user.username }} <br>
+    roll no - {{rollno}} <br>
+    department - {{dept}} <br>
+    email - {{email}}  <br>
+    phone - {{phone}}  <br><br><br><br><br>
+    
+    upload your CV here <br>
+    <form method ='post' enctype ="multipart/form-data">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" value = "Submit"> 
+    </form>
+    <br><br><br><br><br><br>
+    add skills <a href="{% url 'addskill' %}">here</a> <br><br><br><br><br>
+    add projects <a href="{% url 'addproject' %}">here</a> <br><br><br><br><br>
+    see your auto-made portfolio <a href="{% url 'studentview' %}">here</a>
+</center>
+ </body>
+</html>
+-->

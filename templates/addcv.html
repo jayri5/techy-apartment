@@ -1,0 +1,26 @@
+{% extends "afterloginsg.html" %}
+
+{% block content %}
+
+<!--==================== CONTACT ====================-->
+<div class="contact section container" id="contact">                
+    <div class="contact__container grid">
+        <div class="contact__box">
+            <h2 class="section__title">
+             hello {{ request.user.username }} <br>
+    
+            Upload your CV here <br>
+            <form method="post" enctype ="multipart/form-data" class="contact__form">
+            {% csrf_token %}
+            <div class="contact__inputs">
+                <div class="contact__content">
+                    {{form}}
+                </div>
+                <input type="submit" value = "Submit">
+              </form>
+            </div>
+            </h2>
+
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,157 @@
+{% extends "afterloginsg.html" %}
+
+{% block content %}
+
+<!--==================== PD ====================-->
+<div class="contact section container" id="contact">                
+    <div class="contact__container grid">
+        <div class="contact__box">
+            <h2 class="section__title">
+            {% if obj %}
+            <h3>Your roll no - {{roll}}, your personal details</h3>
+            <ul>
+            {% for emp in obj %}
+              <li>student name = {{emp.name}}</li>
+              <li>student department = {{emp.dept}}</li>
+              <li>student year of joining = {{emp.yoj}}</li>
+              <li>student email = {{emp.email}}</li>
+              <li>student phone number = {{emp.phone}}</li>
+
+            {% endfor %}
+          </ul>
+          {% else %}
+            <h3>Not a valid rollno</h3>
+          {% endif %}
+        </h2>
+        </div>
+    </div>
+</div>
+
+<!--==================== SKILLS ====================-->
+<div class="contact section container" id="contact">                
+    <div class="contact__container grid">
+        <div class="contact__box">
+            <h2 class="section__title">
+            {% if skillobj %}
+            <h3>your skills</h3>
+            <ul>
+            {% for emp in skillobj %}
+              <li>{{emp.skill}}</li>
+            {% endfor %}
+           </ul>
+          {% else %}
+            <h3>Not a valid rollno</h3>
+          {% endif %}
+        </h2>
+        </div>
+    </div>
+</div>
+
+<!--==================== PROJECTS ====================-->
+<div class="contact section container" id="contact">                
+    <div class="contact__container grid">
+        <div class="contact__box">
+            <h2 class="section__title">
+            {% if projobj %}
+            <h3>your skills</h3>
+            <ul>
+            {% for emp in projobj %}
+              <li>{{emp.project}}</li>
+            {% endfor %}
+           </ul>
+          {% else %}
+            <h3>Not a valid rollno</h3>
+          {% endif %}
+        </h2>
+        </div>
+    </div>
+</div>
+
+<!--==================== RESUME ====================-->
+<div class="contact section container" id="contact">                
+    <div class="contact__container grid">
+        <div class="contact__box">
+            <h2 class="section__title">
+            {% if cvobj %}
+            <h3>CV uploaded by you</h3>
+            <ul>
+            {% for emp in cvobj %}
+              Download - <a href="{{emp.pdf.url}}" download> {{emp.pdf}} </a>
+            {% endfor %}
+          </ul>
+          {% else %}
+            <h3>Not a valid rollno</h3>
+          {% endif %}
+        </h2>
+        </div>
+    </div>
+     <a href="{% url 'password_reset_custom' %}" class="button button--flex tutorial__explore">
+     Send a mail to this student</a>
+</div>
+
+{% endblock %}
+<!--
+<!DOCTYPE html>
+<html>
+    
+<head>
+	<title>Login</title>
+</head>
+<title>admin side</title>
+<body>
+<center>
+{% if obj %}
+    <h3>personal details of student {{roll}}</h3>
+    <ul>
+    {% for emp in obj %}
+      <li>student name = {{emp.name}}</li>
+      <li>student department = {{emp.dept}}</li>
+      <li>student email = {{emp.email}}</li>
+      <li>student phone number = {{emp.phone}}</li>
+
+    {% endfor %}
+  </ul>
+  {% else %}
+    <h3>Not a valid rollno</h3>
+  {% endif %}
+  
+  {% if skillobj %}
+    <h3>skills of student {{roll}}</h3>
+    <ul>
+    {% for emp in skillobj %}
+      <li>{{emp.skill}}</li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <h3>Not a valid rollno</h3>
+  {% endif %}
+  
+  {% if projobj %}
+    <h3>projects of student {{roll}}</h3>
+    <ul>
+    {% for emp in projobj %}
+      <li>{{emp.project}}</li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <h3>Not a valid rollno</h3>
+  {% endif %}
+  
+  {% if cvobj %}
+    <h3>CV of student {{roll}}</h3>
+    <ul>
+    {% for emp in cvobj %}
+      <!--<li>{{emp.pdf}}</li>-->
+      Download - <a href="{{emp.pdf.url}}" download> {{emp.pdf}} </a>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <h3>Not a valid rollno</h3>
+  {% endif %}
+  <div class="d-flex justify-content-center links">
+	 Send a mail to this student <a href="{% url 'password_reset_custom' %}" class="ml-2">HERE</a>
+  </div>
+  <center>
+</body>
+</html>
+-->

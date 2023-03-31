@@ -1,0 +1,51 @@
+{% extends "afterloginsg.html" %}
+
+{% block content %}
+
+<!--==================== CONTACT ====================-->
+<div class="contact section container" id="contact">                
+    <div class="contact__container grid">
+        <div class="contact__box">
+            <h2 class="section__title">
+             hello {{ request.user.username }} <br>
+    
+            Add Skill (separate by comma if multiple) <br>
+            <form method="post" enctype ="multipart/form-data" class="contact__form">
+            {% csrf_token %}
+            <div class="contact__inputs">
+                <div class="contact__content">
+                    {{form}}
+                </div>
+                <input type="submit" value = "Submit">
+            </div>
+            </form>
+            </h2>
+        </div>
+    </div>
+</div>
+{% endblock %}
+<!--
+<!DOCTYPE html>
+<html>
+<title> add skill </title>    
+<head>
+	<title>Login</title>
+</head>
+<body>
+   <center> 
+    hello {{ request.user.username }} <br>
+    roll no - {{rollno}} <br>
+    department - {{dept}} <br>
+    email - {{email}}  <br>
+    phone - {{phone}}  <br><br><br><br><br>
+    add your skills here <br>
+    <form method ='post' enctype ="multipart/form-data">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" value = "Submit"> 
+    </form><br><br><br>
+    go back to previous <a href="{% url 'afterlogin' %}">page</a>
+</center>
+ </body>
+</html>
+-->

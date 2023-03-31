@@ -1,0 +1,81 @@
+{% extends "afterloginsg.html" %}
+
+{% block content %}
+
+<!--==================== ROLL NO ====================-->
+<h2> ADMIN OPTIONS! </h2>
+<div class="contact section container" id="contact">                
+    <div class="contact__container grid">
+    <h3> Enter Student university roll to see details </h3>
+        <form action="/adminview" method="get" class="contact__form">
+            <div class="contact__inputs">
+                <div class="contact__content">
+                    <input type="text" placeholder=" " class="contact__input" name="roll">
+                    <label for="" class="contact__label">Univ. Roll No</label>
+                </div>
+                <input type="submit" >
+              </form>
+            </div>
+    </div>
+</div>
+
+<!--==================== DEPT ====================-->
+<div class="contact section container" id="contact">                
+    <div class="contact__container grid">
+    <h3> Enter Dpartment name to see CVs </h3>
+        <form action="/adminviewpdf" method="get" class="contact__form">
+            <div class="contact__inputs">
+                <div class="contact__content">
+                    <input type="text" placeholder=" " class="contact__input" name="dept">
+                    <label for="" class="contact__label">Department</label>
+                </div>
+                <input type="submit" >
+              </form>
+            </div>
+    </div>
+</div>
+
+<!--==================== YOJ ====================-->
+<div class="contact section container" id="contact">                
+    <div class="contact__container grid">
+        <h3> Enter YOJ to see CVs </h3>
+        <form action="/adminviewpdfyoj" method="get" class="contact__form">
+            <div class="contact__inputs">
+                <div class="contact__content">
+                    <input type="text" placeholder=" " class="contact__input" name="yoj">
+                    <label for="" class="contact__label">Year of Joining</label>
+                </div>
+                <input type="submit" >
+              </form>
+            </div>
+    </div>
+</div>
+
+{% endblock %}
+<!--
+<!DOCTYPE html>
+<html>
+    
+<head>
+	<title>Login</title>
+</head>
+<body>
+<center>
+<h2> HELLO ADMIN!!
+	
+                <form action="adminview" method="get">
+                         <h3>Enter student roll: 
+                         <input type="text" name="roll" placeholder="Enter roll no"><br>
+                         <input type="submit" value="Submit"></h3>
+                        </form>
+                        
+                <form action="adminviewpdf" method="get">
+                         <h3>Enter dept: 
+                         <input type="text" name="dept" placeholder="Enter dept"><br>
+                         <input type="submit" value="Submit"></h3>
+                        </form>        
+</h2>                        
+</center>
+</body>
+</html>
+-->
